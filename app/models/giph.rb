@@ -1,0 +1,2 @@
+class Giph < ApplicationRecord
+end
