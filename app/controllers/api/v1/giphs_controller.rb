@@ -9,7 +9,7 @@ class Api::V1::GiphsController < ApplicationController
     # byebug
     user = User.find_or_create_by(username: params[:username])
     giph = Giph.find_or_create_by(title: params[:title], url: params[:url])
-    favorite = Favorite.create(user: user, giph: giph)
+    favorite = Favorite.find_or_create_by(user: user, giph: giph)
 
     render json: user, status: 200
   end
